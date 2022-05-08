@@ -97,3 +97,7 @@ function createCourseGoal(title: string, description: string, date: Date): Cours
   courseGoal.completeUntil = date;
   return courseGoal as CourseGoal;
 }
+
+//readonly makes it so you can't change the properties of the object
+const names: Readonly<string[]> = ['Max', 'Anna'];
+// names.push('Manu')
