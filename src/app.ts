@@ -37,7 +37,11 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
   return [element, descriptionText];
 }
 
-console.log(countAndDescribe(['Sports']));
+console.log(countAndDescribe(['Sports', 'Cooking']));
 
+// keyof tells typescript we want to ensure it only calls that type
+function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) {
+  return 'Value: ' + obj[key];
+}
 
-
+console.log(extractAndConvert({name: 'Max'}, 'name'));
