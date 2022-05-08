@@ -81,3 +81,19 @@ const numberStorage = new DataStorage<number>();
 // // ...
 // objStorage.removeItem(maxObj)
 // console.log(objStorage.getItems());
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+
+//Partial turns it into an object type where all properties aree optional
+function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  return courseGoal as CourseGoal;
+}
